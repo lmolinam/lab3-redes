@@ -6,8 +6,8 @@ import types
 import blackjack
 
 
-TIEMPO_ESPERA_CONEXIONES = 5
-TIEMPO_ESPERA_RONDA = 15
+TIEMPO_ESPERA_CONEXIONES = 20
+TIEMPO_ESPERA_RONDA = 10
 MAX_CLIENTES = 7
 MENSAJE_ESPERA = "Partida aun no empieza, por favor espere"
 MENSAJE_RECHAZO = "Partida en progreso, no se admiten conexiones"
@@ -160,7 +160,7 @@ def servir_cliente(key, mask, selector, conn_jugadores, ready_to_play=True):
         recv_data = conn.recv(1024).decode()  # Should be ready to read
         jugador = blackjack.obtener_jugador(data.conn_jugador.numero_jugador, jugadores=MESA_BLACKJACK.jugadores)
         if  recv_data and not ready_to_play:
-            print(f"Se omite comunicación con {jugador.nombre} ya que aún no comienza partida")
+            print(f"Paquete recibido desde {jugador.nombre}, se omite ya que aún no comienza partida")
         elif recv_data:
             if recv_data == blackjack.OPCION_PEDIR_CARTA:
                 try:

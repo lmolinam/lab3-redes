@@ -347,6 +347,7 @@ class MesaBlackJack:
         else:
             mensaje_final = f"* !Partida Terminada! *\n* El ganador es {self.ronda_actual.ganadores[0].nombre} con un puntaje de {self.ronda_actual.ganadores[0].puntaje_final} *"
         self.ronda_actual = None
+        self.croupier.reset()
         for jugador in self.jugadores:
             jugador.reset()
 
