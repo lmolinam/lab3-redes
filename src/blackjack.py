@@ -108,7 +108,7 @@ class BarajaInglesa:
         self._inicializar_baraja()
 
     def __str__(self):
-        print(f"total cartas: {self.total_cartas}, cartas restantes: {self.cartas_restantes}")
+        return f"total cartas: {self.total_cartas}, cartas restantes: {self.cartas_restantes}"
 
     def _inicializar_baraja(self):
         for pinta in PINTAS:
@@ -382,7 +382,6 @@ def obtener_jugador(numero_jugador, jugadores=[]):
 
 def obtener_carta_desde_string(string_carta = ""):
     cartas = []
-    print(string_carta)
     for carta in string_carta.split(TOKEN_SEPARACION_CARTAS, 1):
         tipo, pinta = carta.split(TOKEN_SEPARACION_DATOS_CARTA, 1)
         tipo = tipo.strip()

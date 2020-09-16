@@ -45,7 +45,6 @@ def recibir_mensaje(socket):
 
 def recibir_primeras_cartas(socket, jugador):
     primeras_cartas = recibir_mensaje(socket)
-    print(f"Primeras cartas recibidas: {str(primeras_cartas)}")
     primera_carta, segunda_carta = blackjack.obtener_carta_desde_string(primeras_cartas)
     jugador.tomar_carta(primera_carta)
     jugador.tomar_carta(segunda_carta)
