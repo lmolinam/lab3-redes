@@ -61,7 +61,6 @@ def esperar_conexiones(selector, conexiones=[], maximo_jugadores=MAX_CLIENTES, t
 
 
 def jugar_partida_blackjack(selector, conexiones=[], tiempo_espera=TIEMPO_ESPERA_RONDA):
-    print("")
     tiempo_inicio = time.time()
     while True:
         if time.time() - tiempo_inicio >= tiempo_espera:
